@@ -1,0 +1,42 @@
+<div>
+    <style>
+        * {
+            color: white;
+        }
+        nav {
+            box-shadow: 5px 5px 20px rgb(242, 174, 174);
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-yellow bg-dark col-12 px-5 mb-5 fixed-top">
+       
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto" style="flex-grow: 1;">
+            
+            <li *ngIf="!isTokenThere" class="nav-item" >
+              <a class="nav-link" routerLink="register">Register</a>
+            </li>
+            <li *ngIf="!isTokenThere" class="nav-item">
+                <a class="nav-link" routerLink="login">Login</a>
+            </li>
+            <li *ngIf="isTokenThere" class="nav-item">
+                <a class="nav-link" routerLink="account">LogOutPage</a>
+            </li>
+            <li *ngIf="isTokenThere" class="nav-item">
+                <a class="nav-link" routerLink="task">Task</a>
+            </li>
+            <li *ngIf="isTokenThere" class="nav-item">
+              <a class="nav-link" routerLink="tasklist">TaskList</a>
+          </li>
+            
+          </ul>
+         
+           
+        
+        </div>
+      </nav>
+    <router-outlet></router-outlet>
+</div>

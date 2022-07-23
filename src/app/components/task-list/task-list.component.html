@@ -1,0 +1,29 @@
+<div class="panel panel-primary" class="px-5 col-12" style="margin-top: 5rem;">
+    <div class="panel-heading">
+      <h2>Task List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+            
+          <tr>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of tasks | async">
+            <td>{{task.title}}</td>
+            <td>{{task.status}}</td>
+            <td><button (click)="deleteTask(task.id)" class="btn btn-danger">Delete</button>
+                <button (click)="updateTask(task.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+                
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  
